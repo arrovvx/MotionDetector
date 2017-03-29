@@ -1,0 +1,7 @@
+{
+	"_comment": "Please edit this accordingly on different systems.",
+	
+	"MDWebsocketPort": 8891,
+	
+	"loggerLevel": "ERROR"
+}
