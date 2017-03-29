@@ -37,7 +37,12 @@ def startServer(msgHandler):
 def handleMsg(self, message, callback):
 	
 	data = json.loads(message)
-	self.write_message('{"output": '+ str(callback(data)) + '}')
+	
+	type, output = callback(data)
+	if type == "status":
+		self.write_message('{"name" : "MDStatus", "output": '+ str(output) + '}')
+	elif type == "data":
+		self.write_message('{"name" : "MDOutput", "output": '+ str(output) + '}')
 	
 	#bufferData[curser] = parsed_json['input']
 	

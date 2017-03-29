@@ -1,10 +1,16 @@
 import MotionDetectorINTF as MD
 
-#this function is called everytime there is a batch of data (400 default, can be changed in settings.json)
+#this function is called everytime a set of acc data is received
+#return a command and the corresponding values
+#e.g. "status", "done"
+#e.g. "data", -10
+#return a bad command and nothing will happen, but always return a tuple of 2
+
 def handleData(Data):
+	
 	#print(Data.shape)
 	print(Data)
-	return 3
+	return "data", 10
 	
 
 	
