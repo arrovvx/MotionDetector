@@ -7,9 +7,7 @@ import MotionDetectorINTF as MD
 #return a bad command and nothing will happen, but always return a tuple of 2
 
 def handleData(Data):
-	
-	#print(Data.shape)
-	print(Data)
+	print(Data.shape)
 	return "data", 10
 	
 

@@ -39,10 +39,8 @@ def handleMsg(self, message, callback):
 	data = json.loads(message)
 	
 	type, output = callback(data)
-	if type == "status":
-		self.write_message('{"name" : "MDStatus", "output": '+ str(output) + '}')
-	elif type == "data":
-		self.write_message('{"name" : "MDOutput", "output": '+ str(output) + '}')
+	if type == "data":
+		self.write_message('{"name" : "MDOutput", "output": %s}' % str(output))
 	
 	#bufferData[curser] = parsed_json['input']
 	
